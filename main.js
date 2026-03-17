@@ -1,54 +1,74 @@
-// Header Scroll Effect
+// Initialize AOS (Animate on Scroll)
+AOS.init({
+    duration: 1000,
+    once: true,
+    offset: 100,
+});
+
+// Custom Cursor Tracking
+const cursor = document.getElementById('custom-cursor');
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+});
+
+document.addEventListener('mousedown', () => cursor.style.transform = 'scale(0.8)');
+document.addEventListener('mouseup', () => cursor.style.transform = 'scale(1)');
+
+// Theme Toggle Logic
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Check for saved theme
+const savedTheme = localStorage.getItem('theme') || 'dark';
+body.setAttribute('data-theme', savedTheme);
+
+themeToggle.addEventListener('click', () => {
+    const currentTheme = body.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    body.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+});
+
+// Blog Posts Injection
+const blogPosts = [
+    {
+        title: "The Future of JavaScript in 2026",
+        date: "March 15, 2026",
+        excerpt: "Exploring new proposals and features in ECMAScript and how they change our workflow."
+    },
+    {
+        title: "Why Minimalist Design Wins",
+        date: "February 28, 2026",
+        excerpt: "Less is more. How to achieve a premium feel with clean layouts and whitespace."
+    },
+    {
+        title: "Optimizing Web Performance",
+        date: "January 14, 2026",
+        excerpt: "Techniques for achieving 100/100 Lighthouse scores on mobile and desktop."
+    }
+];
+
+const blogContainer = document.getElementById('blog-posts');
+if (blogContainer) {
+    blogPosts.forEach(post => {
+        const card = document.createElement('a');
+        card.href = "#";
+        card.className = "blog-card glass";
+        card.innerHTML = `
+            <span class="date">${post.date}</span>
+            <h3>${post.title}</h3>
+            <p>${post.excerpt}</p>
+        `;
+        blogContainer.appendChild(card);
+    });
+}
+
+// Header Scroll Effect (Improved)
 const header = document.querySelector('header');
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
+    header.classList.toggle('scrolled', window.scrollY > 50);
 });
-
-// Staggered scroll reveal animation
-const observerOptions = {
-    threshold: 0.15,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            // Staggered children animation if applicable
-            const children = entry.target.querySelectorAll('.stagger');
-            children.forEach((child, index) => {
-                setTimeout(() => {
-                    child.classList.add('visible');
-                }, index * 200);
-            });
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('section, .project-card').forEach(el => {
-    el.classList.add('reveal');
-    observer.observe(el);
-});
-
-// Dynamically adding reveal styles for cleaner HTML
-const style = document.createElement('style');
-style.textContent = `
-    .reveal {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-    }
-    .reveal.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-`;
-document.head.appendChild(style);
 
 // Example of dynamic content or interaction
 const namePlaceholder = document.getElementById('name-placeholder');
