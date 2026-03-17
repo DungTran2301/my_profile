@@ -19,7 +19,12 @@
         <header>
             <nav>
                 <div class="logo">Portfolio.</div>
-                <ul>
+                <button id="menu-toggle" class="hamburger" aria-label="Open Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Work</a></li>
                     <li><a href="#blog">Blog</a></li>
@@ -35,19 +40,12 @@
 
         <main>
             <section id="hero" data-aos="fade-up">
-                <div class="hero-container">
-                    <div class="hero-text">
-                        <h1 class="gradient-text">Hello, I'm <span id="name-placeholder">Trandung</span>.</h1>
-                        <p class="subtitle">Crafting <span class="highlight">immersive</span> digital experiences with modern JavaScript & semantic HTML.</p>
-                        <div class="cta-group">
-                            <a href="#projects" class="btn primary">View Projects</a>
-                            <a href="#contact" class="btn secondary">Get in Touch</a>
-                        </div>
-                    </div>
-                    <div class="hero-image" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="image-frame glass">
-                            <img src="./assets/profile.jpg" alt="Trandung Profile">
-                        </div>
+                <div class="content">
+                    <h1 class="gradient-text">Hello, I'm <span id="name-placeholder">Trandung</span>.</h1>
+                    <p class="subtitle">Crafting <span class="highlight">immersive</span> digital experiences with modern JavaScript & semantic HTML.</p>
+                    <div class="cta-group">
+                        <a href="#projects" class="btn primary">View Projects</a>
+                        <a href="#contact" class="btn secondary">Get in Touch</a>
                     </div>
                 </div>
             </section>

@@ -116,12 +116,47 @@ nav {
     opacity: 0.6;
 }
 
+@media (max-width: 768px) {
+    #custom-cursor { display: none; }
+}
+
 nav ul {
     display: flex;
     list-style: none;
     gap: 2.5rem;
+    align-items: center;
 }
 
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 28px;
+    height: 2px;
+    background-color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
 nav a {
     text-decoration: none;
     color: #94a3b8;
@@ -303,7 +338,7 @@ h2::after {
 }
 
 .contact-container {
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 3rem;
     text-align: center;
@@ -377,12 +412,68 @@ footer {
     border-top: 1px solid var(--glass-border);
 }
 
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    h1 { font-size: 3.5rem; }
+    section { padding: 8rem 2rem; }
+}
+
 @media (max-width: 768px) {
-    nav ul {
-        display: none;
+    h1 { font-size: 2.75rem; }
+    h2 { font-size: 2rem; }
+    
+    .hamburger {
+        display: flex;
     }
-    .gradient-text {
-        font-size: 3rem;
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: var(--bg-color);
+        flex-direction: column;
+        justify-content: center;
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+        gap: 3rem;
     }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li a {
+        font-size: 1.5rem;
+    }
+
+    .cta-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .project-grid, .blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-container {
+        padding: 2.5rem;
+    }
+
+    .blob {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 2.25rem; }
+    section { padding: 6rem 1.5rem; }
 }
 

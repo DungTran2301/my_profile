@@ -70,6 +70,27 @@ window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 50);
 });
 
+// Mobile Menu Toggle
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+}
+
 // Example of dynamic content or interaction
 const namePlaceholder = document.getElementById('name-placeholder');
 if (namePlaceholder) {
