@@ -10,7 +10,7 @@ const translations = {
         // Hero
         hero_badge: "Sẵn sàng cho cơ hội mới",
         hero_subtitle_prefix: "Tôi là ",
-        hero_description: "Lập trình viên Mobile với hơn 3 năm kinh nghiệm xây dựng các ứng dụng Android và đa nền tảng chất lượng cao sử dụng <strong>Kotlin</strong> và <strong>Flutter</strong>.",
+        hero_description: "Lập trình viên Mobile với hơn 4 năm kinh nghiệm xây dựng các ứng dụng Android và đa nền tảng chất lượng cao sử dụng <strong>Kotlin</strong> và <strong>Flutter</strong>.",
         hero_btn_projects: "Xem dự án",
         hero_btn_contact: "Liên hệ",
         hero_btn_cv: "Tải CV",
@@ -115,7 +115,7 @@ const translations = {
         // Hero
         hero_badge: "Available for opportunities",
         hero_subtitle_prefix: "I'm a ",
-        hero_description: "Experienced Mobile Developer with 3+ years building high-quality Android and cross-platform applications using <strong>Kotlin</strong> and <strong>Flutter</strong>.",
+        hero_description: "Experienced Mobile Developer with 4+ years building high-quality Android and cross-platform applications using <strong>Kotlin</strong> and <strong>Flutter</strong>.",
         hero_btn_projects: "View Projects",
         hero_btn_contact: "Get in Touch",
         hero_btn_cv: "Download CV",
