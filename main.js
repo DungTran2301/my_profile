@@ -64,7 +64,7 @@ window.addEventListener('resize', resizeCanvas);
 document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
-});
+}); 
 
 const particleColors = [
     { r: 99, g: 102, b: 241 },   // indigo
