@@ -1137,6 +1137,153 @@ h2::after {
     color: var(--accent-color);
 }
 
+/* ═══════════════ BOOKS ═══════════════ */
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2.5rem;
+    padding: 2rem 0;
+}
+
+.book-card {
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1.5rem;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-color: var(--primary-color);
+}
+
+.book-card-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-card-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.book-author {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.book-card-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.book-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.book-date {
+    color: var(--text-muted);
+}
+
+.read-more-btn {
+    color: var(--primary-color);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ═══════════════ BOOK MODAL ═══════════════ */
+.book-modal-content {
+    max-width: 800px;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.modal-author {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.modal-date {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* ═══════════════ MARKDOWN CONTENT ═══════════════ */
+.markdown-content {
+    line-height: 1.8;
+    color: var(--text-color);
+    font-size: 1.05rem;
+}
+
+[data-theme="light"] .markdown-content {
+    color: #1e293b; /* Darker slate for light mode readability */
+}
+
+[data-theme="dark"] .markdown-content {
+    color: #e2e8f0; /* Softer white for dark mode readability */
+}
+
+.markdown-content h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+.markdown-content p {
+    margin-bottom: 1.2rem;
+}
+
+.markdown-content ul, .markdown-content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.markdown-content li {
+    margin-bottom: 0.5rem;
+}
+
+.markdown-content blockquote {
+    border-left: 4px solid var(--primary-color);
+    padding: 1rem 1.5rem;
+    background: rgba(var(--primary-rgb), 0.1);
+    font-style: italic;
+    margin: 2rem 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.markdown-content img {
+    display: none;
+}
+
+.markdown-content strong {
+    color: var(--primary-color);
+}
+
+/* Responsive adjustments for book modal */
+@media (max-width: 600px) {
+    .book-modal-content .modal-header {
+        text-align: center;
+    }
+}
+
 /* ═══════════════ CONTACT ═══════════════ */
 #contact h2 {
     text-align: center;

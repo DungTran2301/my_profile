@@ -114,6 +114,13 @@ const translations = {
         // Footer
         footer_text: "Tran Dang Dung. Xây dựng với",
         footer_suffix: "và JavaScript hiện đại.",
+
+        // Books
+        nav_books: "Sách",
+        books_title: "Sách",
+        books_author: "Tác giả",
+        books_finished: "Hoàn thành: ",
+        books_read_more: "Đọc thêm",
     },
     en: {
         // Nav
@@ -230,6 +237,13 @@ const translations = {
         // Footer
         footer_text: "Tran Dang Dung. Built with",
         footer_suffix: "and modern JavaScript.",
+
+        // Books
+        nav_books: "Books",
+        books_title: "Books",
+        books_author: "Author",
+        books_finished: "Finished: ",
+        books_read_more: "Read more",
     }
 };
 

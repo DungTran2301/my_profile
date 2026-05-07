@@ -1,4 +1,5 @@
 import translations from './i18n.js';
+import books from './books.js';
 
 // ═══════════════ LOCALE MANAGEMENT ═══════════════
 let currentLang = localStorage.getItem('lang') || 'en';
@@ -459,9 +460,67 @@ modal.addEventListener('click', (e) => {
     }
 });
 
+// ═══════════════ BOOK MODAL ═══════════════
+const bookModal = document.getElementById('book-modal');
+const bookModalClose = bookModal.querySelector('.modal-close');
+
+function renderBooks() {
+    const booksGrid = document.getElementById('books-grid');
+    if (!booksGrid) return;
+
+    booksGrid.innerHTML = books.map(book => `
+        <article class="book-card glass tilt-card" data-aos="fade-up" data-book-id="${book.id}">
+            <div class="book-card-info">
+                <h3>${book.title}</h3>
+                <p class="book-author"><span data-i18n="books_author">Author</span>: ${book.author}</p>
+                <div class="book-footer">
+                    <span class="book-date"><span data-i18n="books_finished">Finished</span> ${book.date}</span>
+                    <span class="read-more-btn"><span data-i18n="books_read_more">Read more</span> <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+        </article>
+    `).join('');
+
+    // Re-apply translations for newly injected elements
+    applyTranslations(currentLang);
+
+    // Add click events for book cards
+    document.querySelectorAll('.book-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const bookId = card.getAttribute('data-book-id');
+            const book = books.find(b => b.id === bookId);
+            if (!book) return;
+
+            document.getElementById('book-modal-title').textContent = book.title;
+            document.getElementById('book-modal-author').textContent = book.author;
+            document.getElementById('book-modal-date').textContent = `${translations[currentLang].books_finished}${book.date}`;
+            
+            // Use marked.js to parse content
+            document.getElementById('book-modal-content').innerHTML = marked.parse(book.content);
+
+            bookModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+}
+
+renderBooks();
+
+bookModalClose.addEventListener('click', () => {
+    bookModal.classList.remove('active');
+    document.body.style.overflow = '';
+});
+
+bookModal.addEventListener('click', (e) => {
+    if (e.target === bookModal) {
+        bookModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
+
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
-        modal.classList.remove('active');
+    if (e.key === 'Escape' && bookModal.classList.contains('active')) {
+        bookModal.classList.remove('active');
         document.body.style.overflow = '';
     }
 });
@@ -486,7 +545,7 @@ const staggerObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('#about, #skills, #experience, #projects, #contact').forEach(section => {
+document.querySelectorAll('#about, #skills, #experience, #projects, #books, #contact').forEach(section => {
     staggerObserver.observe(section);
 });
 

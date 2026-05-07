@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- AOS Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <!-- Scroll Progress Bar -->
@@ -47,6 +49,7 @@
                     <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
                     <li><a href="#experience" data-i18n="nav_experience">Experience</a></li>
                     <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
+                    <li><a href="#books" data-i18n="nav_books">Books</a></li>
                     <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
                     <li>
                         <button id="lang-toggle" class="lang-btn" aria-label="Switch Language">
@@ -437,6 +440,14 @@
                     </article>
                 </div>
             </section>
+ 
+            <!-- ═══════════════ BOOKS ═══════════════ -->
+            <section id="books">
+                <h2 class="section-title reveal-up" data-i18n="books_title">My Bookshelf</h2>
+                <div class="books-grid" id="books-grid">
+                    <!-- Books will be injected here by main.js -->
+                </div>
+            </section>
 
             <!-- ═══════════════ CONTACT ═══════════════ -->
             <section id="contact">
@@ -490,6 +501,23 @@
                 <ul id="modal-highlights"></ul>
                 <h4>Technologies</h4>
                 <div id="modal-tags" class="tags"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book Modal -->
+    <div id="book-modal" class="modal-overlay">
+        <div class="modal-content glass book-modal-content">
+            <button class="modal-close" aria-label="Close">&times;</button>
+            <div class="modal-header">
+                <div>
+                    <h2 id="book-modal-title"></h2>
+                    <p id="book-modal-author" class="modal-author"></p>
+                    <p id="book-modal-date" class="modal-date"></p>
+                </div>
+            </div>
+            <div class="modal-body markdown-content" id="book-modal-content">
+                <!-- Markdown content will be injected here -->
             </div>
         </div>
     </div>
