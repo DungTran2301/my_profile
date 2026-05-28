@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Diary — Your Reading Journey, Beautifully Chronicled</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Book Diary is a premium reading tracker designed to build lifelong reading habits, capture elegant book notes, and analyze your reading patterns. Join the exclusive waitlist today.">
+  <meta name="keywords" content="reading tracker, book tracker, reading log, book notes, read habit, bookshelf app, pre-launch waitlist">
+  <meta name="author" content="Book Diary Team">
+  
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content="Book Diary — Your Reading Journey, Beautifully Chronicled">
+  <meta property="og:description" content="Capture raw inspirations, build elegant shelves, and track your habits in a gorgeous space designed for book lovers.">
+  <meta property="og:type" content="website">
+  
+  <!-- Google Fonts: Lora (headings) & Outfit (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tabler Icons CSS for App UI icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo" id="nav-logo">
+        <div class="logo-icon">
+          <i class="ti ti-book-2"></i>
+        </div>
+        <span>Book Diary</span>
+      </a>
+      
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#interactive-demo" class="nav-link">Interactive Demo</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+      
+      <div class="nav-actions">
+        <a href="#waitlist" class="btn btn-primary-nav" id="nav-waitlist-btn">Join Waitlist</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+      </div>
+      
+      <div class="container hero-container">
+        <!-- Hero Copy -->
+        <div class="hero-content">
+          <div class="badge-prelaunch">
+            <span class="pulse-dot"></span> App Pre-Launch Stage
+          </div>
+          
+          <h1 class="hero-title">
+            Your reading journey, <br><span class="highlight">beautifully chronicled.</span>
+          </h1>
+          
+          <p class="hero-subtitle">
+            Book Diary helps you build a lifelong reading habit, capture raw inspirations, and curate your personal library in a premium, warm space designed exclusively for book lovers.
+          </p>
+          
+          <!-- Quick Hero Waitlist Form -->
+          <div class="hero-cta-group">
+            <form class="hero-waitlist-form" id="hero-quick-form">
+              <div class="input-wrapper">
+                <i class="ti ti-mail input-icon"></i>
+                <input type="email" placeholder="Enter your email address" required aria-label="Email for waitlist" class="quick-email-input">
+              </div>
+              <button type="submit" class="btn btn-accent btn-glow">Get Early Access</button>
+            </form>
+            <div class="waitlist-social-proof">
+              <div class="avatar-group">
+                <span class="avatar" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&auto=format&fit=crop&q=60')"></span>
+                <span class="avatar" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&auto=format&fit=crop&q=60')"></span>
+                <span class="avatar" style="background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&auto=format&fit=crop&q=60')"></span>
+              </div>
+              <p class="proof-text">Join <strong>1,420+ readers</strong> already on the waitlist</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Hero Graphic (Live App Mockup) -->
+        <div class="hero-graphic" id="interactive-demo">
+          <div class="phone-wrapper">
+            <!-- Smartphone Shell -->
+            <div class="phone-device">
+              <div class="device-speaker"></div>
+              <div class="device-camera"></div>
+              <div class="device-volume-up"></div>
+              <div class="device-volume-down"></div>
+              <div class="device-power"></div>
+              
+              <!-- App Inside Screen -->
+              <div class="phone-screen" id="app-screen">
+                <!-- Status Bar -->
+                <div class="status-bar">
+                  <span class="status-time">09:41</span>
+                  <div class="status-icons">
+                    <i class="ti ti-wifi" aria-hidden="true"></i>
+                    <i class="ti ti-battery-4" aria-hidden="true"></i>
+                  </div>
+                </div>
+                
+                <!-- App Inner Scrollable View -->
+                <div class="app-content-scroll">
+                  <!-- Weekly Progress Card -->
+                  <div class="week-card">
+                    <div class="deco1"></div>
+                    <div class="deco2"></div>
+                    <div class="streak-pill" id="app-streak-pill">🔥 12 days</div>
+                    <div class="week-label">This Week</div>
+                    <div class="week-title">May 24 – 30</div>
+                    <div class="week-stats">
+                      <div class="week-stat">
+                        <span class="week-stat-num" id="stat-hours">4.2</span><span class="week-stat-unit">h</span>
+                        <div class="week-stat-label">Reading Time</div>
+                      </div>
+                      <div class="week-stat">
+                        <span class="week-stat-num" id="stat-pages">214</span>
+                        <div class="week-stat-label">Pages Read</div>
+                      </div>
+                      <div class="week-stat">
+                        <span class="week-stat-num" id="stat-notes">8</span>
+                        <div class="week-stat-label">New Notes</div>
+                      </div>
+                    </div>
+                    <div class="week-divider"></div>
+                    <div class="week-bottom">
+                      <div class="week-bar-bg"><div class="week-bar-fill" id="weekly-bar-fill"></div></div>
+                      <span class="week-bar-label" id="weekly-bar-label">18/30 books · 60%</span>
+                    </div>
+                  </div>
+                  
+                  <!-- Weekly Reading Calendar -->
+                  <p class="section-title">Weekly Reading Log</p>
+                  <div class="days-row">
+                    <div class="day-dot">
+                      <div class="day-circle read"><i class="ti ti-check" aria-hidden="true"></i></div>
+                      <span class="day-name">Mon</span>
+                    </div>
+                    <div class="day-dot">
+                      <div class="day-circle read"><i class="ti ti-check" aria-hidden="true"></i></div>
+                      <span class="day-name">Tue</span>
+                    </div>
+                    <div class="day-dot">
+                      <div class="day-circle empty">—</div>
+                      <span class="day-name">Wed</span>
+                    </div>
+                    <div class="day-dot">
+                      <div class="day-circle read"><i class="ti ti-check" aria-hidden="true"></i></div>
+                      <span class="day-name">Thu</span>
+                    </div>
+                    <div class="day-dot">
+                      <div class="day-circle read"><i class="ti ti-check" aria-hidden="true"></i></div>
+                      <span class="day-name">Fri</span>
+                    </div>
+                    <div class="day-dot">
+                      <div class="day-circle read"><i class="ti ti-check" aria-hidden="true"></i></div>
+                      <span class="day-name">Sat</span>
+                    </div>
+                    <div class="day-dot">
+                      <div class="day-circle today" id="today-dot">Sun</div>
+                      <span class="day-name highlight-day">today</span>
+                    </div>
+                  </div>
+                  
+                  <!-- Active Book -->
+                  <p class="section-title">Currently Reading</p>
+                  <div class="book-card">
+                    <div class="book-cover">
+                      <div class="book-spine"></div>
+                      <i class="ti ti-book-2 book-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="book-info">
+                      <div class="book-title" id="active-book-title">The Alchemist</div>
+                      <div class="book-author" id="active-book-author">Paulo Coelho</div>
+                      <div class="progress-bar-bg"><div class="progress-bar-fill" id="active-progress-fill" style="width: 72%;"></div></div>
+                      <div class="progress-info">
+                        <span class="progress-pct" id="active-progress-pct">72%</span>
+                        <span class="progress-page" id="active-progress-pages">144 / 200 pages</span>
+                      </div>
+                      <div class="book-actions">
+                        <button class="btn-primary" id="btn-update-progress">Update Progress</button>
+                        <button class="btn-icon" id="btn-open-notes" title="View notes"><i class="ti ti-notes" aria-hidden="true"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Recent Highlights / Notes -->
+                  <p class="section-title">Latest Key Insight</p>
+                  <div class="quote-card">
+                    <div class="quote-header">
+                      <span class="quote-book-tag" id="quote-book-tag">The Alchemist</span>
+                      <span class="quote-page-tag" id="quote-page-tag">page 32</span>
+                    </div>
+                    <div class="quote-text" id="quote-text">"When you want something, all the universe conspires in helping you to achieve it."</div>
+                    <div class="quote-time" id="quote-time">23 mins ago</div>
+                  </div>
+                </div> <!-- End App Scroll View -->
+                
+                <!-- Bottom Tab Bar -->
+                <div class="tab-bar">
+                  <div class="tab-item active" data-tab="home">
+                    <i class="ti ti-home tab-icon active" aria-hidden="true"></i>
+                    <span class="tab-label active">Home</span>
+                  </div>
+                  <div class="tab-item" data-tab="library">
+                    <i class="ti ti-books tab-icon" aria-hidden="true"></i>
+                    <span class="tab-label">Library</span>
+                  </div>
+                  <div class="tab-item" data-tab="discover">
+                    <i class="ti ti-compass tab-icon" aria-hidden="true"></i>
+                    <span class="tab-label">Discover</span>
+                  </div>
+                  <div class="tab-item" data-tab="profile">
+                    <i class="ti ti-user tab-icon" aria-hidden="true"></i>
+                    <span class="tab-label">Profile</span>
+                  </div>
+                </div>
+              </div> <!-- End Phone Screen -->
+              
+            </div> <!-- End Phone Device -->
+            
+            <!-- Floating interactive hint -->
+            <div class="interactive-hint">
+              <i class="ti ti-hand-click animate-bounce"></i>
+              <span>Interactive Preview — Click buttons or tabs!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Overview Section -->
+    <section id="features" class="features-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-subtitle">Designed for Book Lovers</span>
+          <h2 class="section-title-large">Every chapter of your reading journey, honored.</h2>
+          <p class="section-desc">We reimagined book tracking not as a chore, but as a cozy, aesthetic ritual. Explore what makes Book Diary different.</p>
+        </div>
+        
+        <div class="features-grid">
+          <!-- Feature 1 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <i class="ti ti-calendar-event"></i>
+            </div>
+            <h3 class="feature-title">Dynamic Reading Log</h3>
+            <p class="feature-text">Keep your streak alive with a beautifully visual reading tracker that encourages daily dedication. Easily monitor your frequency and watch your habits grow.</p>
+          </div>
+          
+          <!-- Feature 2 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <i class="ti ti-notes"></i>
+            </div>
+            <h3 class="feature-title">Heartfelt Quotes & Logs</h3>
+            <p class="feature-text">Never lose a spark of inspiration again. Capture your favorite paragraphs, annotate key lessons, and index quotes cleanly by page number in your personalized scrapbook.</p>
+          </div>
+          
+          <!-- Feature 3 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <i class="ti ti-chart-bar"></i>
+            </div>
+            <h3 class="feature-title">Delightful Analytics</h3>
+            <p class="feature-text">Understand your reading velocity. Book Diary breaks down your total read-time, monthly pages, book completion rates, and highlights. Beautiful charts made simple.</p>
+          </div>
+          
+          <!-- Feature 4 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <i class="ti ti-books"></i>
+            </div>
+            <h3 class="feature-title">Bespoke Digital Shelves</h3>
+            <p class="feature-text">Curate customizable virtual bookshelves. Catalog your active reads, standard wishlist, and fully annotated collections in a sleek interface matching physical shelf aesthetics.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Feature Deep-Dive Banner (Mockup Highlight) -->
+    <section class="banner-section">
+      <div class="container banner-grid">
+        <div class="banner-image">
+          <div class="quote-scrapbook-element">
+            <div class="scrapbook-tape"></div>
+            <div class="scrapbook-header">
+              <i class="ti ti-quote"></i>
+              <span>Insight from "Man's Search for Meaning"</span>
+            </div>
+            <p class="scrapbook-quote">"Those who have a 'why' to live, can bear with almost any 'how'."</p>
+            <div class="scrapbook-footer">
+              <span>Chapter 2 · Page 76</span>
+              <span class="scrapbook-tag">Philosophy</span>
+            </div>
+          </div>
+        </div>
+        <div class="banner-content">
+          <span class="badge-secondary">Capture Raw Inspiration</span>
+          <h2 class="banner-title">Build a lifelong diary of deep thoughts and sudden epiphanies.</h2>
+          <p class="banner-text">Book Diary treats quotes as treasures. When you save an idea, we don't just dump it into a plain list. We structure it like a classic literary scrap-notebook—ready to be reviewed, shared, or remembered forever.</p>
+          <ul class="banner-list">
+            <li><i class="ti ti-circle-check"></i> Rich editor styling for quotes and quick comments</li>
+            <li><i class="ti ti-circle-check"></i> Easy tagging systems (Philosophy, Fiction, Self-Growth)</li>
+            <li><i class="ti ti-circle-check"></i> Instant sharing templates with aesthetic backgrounds</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Waitlist CTA Section -->
+    <section id="waitlist" class="waitlist-section">
+      <div class="container">
+        <div class="waitlist-card">
+          <div class="waitlist-shapes">
+            <div class="w-shape w-shape-1"></div>
+            <div class="w-shape w-shape-2"></div>
+          </div>
+          
+          <div class="waitlist-wrapper">
+            <div class="waitlist-content">
+              <h2 class="waitlist-title">Be the first to step into our library.</h2>
+              <p class="waitlist-subtitle">Book Diary is currently in exclusive, private pre-launch. Secure your spot on the waitlist to receive priority onboarding, exclusive early-adopter badges, and 3 months of Premium free upon launch.</p>
+              
+              <div class="waitlist-counter">
+                <i class="ti ti-users"></i>
+                <span>Currently <strong class="highlight-count" id="waitlist-count">1,420</strong> book lovers in queue. Ready to join?</span>
+              </div>
+            </div>
+            
+            <div class="waitlist-form-container">
+              <!-- Success State (Hidden by default) -->
+              <div class="waitlist-success-state" id="waitlist-success">
+                <div class="success-icon-box">
+                  <i class="ti ti-circle-check"></i>
+                </div>
+                <h3 class="success-title">You're on the list!</h3>
+                <p class="success-msg">Thank you for joining. We have successfully secured your position in our pre-launch queue.</p>
+                <div class="ticket-box">
+                  <div class="ticket-header">YOUR PRIORITY POSITION</div>
+                  <div class="ticket-number" id="ticket-number">#1,421</div>
+                  <div class="ticket-footer">We'll email you at <span id="registered-email">your@email.com</span> as soon as onboarding begins.</div>
+                </div>
+                <button class="btn btn-secondary btn-full" id="btn-reset-waitlist">Register another email</button>
+              </div>
+              
+              <!-- Main Form -->
+              <form class="waitlist-main-form" id="waitlist-form">
+                <div class="form-group">
+                  <label for="user-name">Full Name</label>
+                  <div class="form-input-wrapper">
+                    <i class="ti ti-user"></i>
+                    <input type="text" id="user-name" required placeholder="Jane Doe" autocomplete="name">
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="user-email">Email Address</label>
+                  <div class="form-input-wrapper">
+                    <i class="ti ti-mail"></i>
+                    <input type="email" id="user-email" required placeholder="jane@example.com" autocomplete="email">
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label>Which reader persona describes you best?</label>
+                  <div class="persona-options">
+                    <label class="persona-option-card">
+                      <input type="radio" name="persona" value="bookworm" checked class="persona-radio">
+                      <div class="persona-option-content">
+                        <span class="persona-emoji">📚</span>
+                        <span class="persona-label">Devoted Bookworm</span>
+                      </div>
+                    </label>
+                    <label class="persona-option-card">
+                      <input type="radio" name="persona" value="casual" class="persona-radio">
+                      <div class="persona-option-content">
+                        <span class="persona-emoji">☕</span>
+                        <span class="persona-label">Casual Reader</span>
+                      </div>
+                    </label>
+                    <label class="persona-option-card">
+                      <input type="radio" name="persona" value="student" class="persona-radio">
+                      <div class="persona-option-content">
+                        <span class="persona-emoji">🎓</span>
+                        <span class="persona-label">Student / Researcher</span>
+                      </div>
+                    </label>
+                    <label class="persona-option-card">
+                      <input type="radio" name="persona" value="writer" class="persona-radio">
+                      <div class="persona-option-content">
+                        <span class="persona-emoji">✍️</span>
+                        <span class="persona-label">Writer / Creator</span>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                
+                <button type="submit" class="btn btn-accent btn-full btn-glow" id="btn-submit-waitlist">
+                  <span>Secure My Invitation Slot</span>
+                  <i class="ti ti-arrow-right"></i>
+                </button>
+                
+                <p class="form-terms">No credit card required. We value privacy and will never sell your information.</p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+      <div class="container faq-container">
+        <div class="faq-header">
+          <span class="section-subtitle">Frequently Asked Questions</span>
+          <h2 class="faq-title-text">Curious about Book Diary?</h2>
+          <p class="faq-desc">Here is everything you need to know about the product, pre-launch, and waitlist eligibility.</p>
+        </div>
+        
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>What is Book Diary and how does it work?</span>
+              <i class="ti ti-chevron-down"></i>
+            </button>
+            <div class="faq-panel">
+              <p>Book Diary is an elegant reading tracker app designed to turn your reading habit into a rich, structured experience. You can log your active books, catalog page progress, calendar daily logs, save highlighted quotes like a virtual diary, and analyze your yearly statistics.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Is the waitlist free, and what do I get?</span>
+              <i class="ti ti-chevron-down"></i>
+            </button>
+            <div class="faq-panel">
+              <p>Yes, joining the pre-launch waitlist is 100% free! By securing your slot, you will receive: Priority access as soon as onboarding opens, an exclusive early-adopter profile badge, and 3 months of Premium features absolutely free of charge when the app launches publicly.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Which platforms will the app support?</span>
+              <i class="ti ti-chevron-down"></i>
+            </button>
+            <div class="faq-panel">
+              <p>At launch, Book Diary will be available on iOS (iPhone) and Android smartphones. We also plan to release a companion web-shelf view in the future, allowing you to access and curate your book quotes from any desktop browser.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>How are my private book notes and diary safe?</span>
+              <i class="ti ti-chevron-down"></i>
+            </button>
+            <div class="faq-panel">
+              <p>Your notes and quotes are completely private. We support both offline local SQLite databases and secure encrypted cloud syncing, ensuring you are the sole owner of your literary thoughts and highlights.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <div class="logo-icon">
+              <i class="ti ti-book-2"></i>
+            </div>
+            <span>Book Diary</span>
+          </a>
+          <p class="footer-brand-desc">Honoring every word you read. Providing beautiful structure to your literary habit.</p>
+        </div>
+        
+        <div class="footer-links-group">
+          <div class="footer-column">
+            <h4>Product</h4>
+            <a href="#features">Features</a>
+            <a href="#interactive-demo">Interactive Demo</a>
+            <a href="#waitlist">Waitlist Sign Up</a>
+          </div>
+          <div class="footer-column">
+            <h4>Community</h4>
+            <a href="#">Twitter / X</a>
+            <a href="#">Instagram</a>
+            <a href="#">Book Club Discord</a>
+          </div>
+          <div class="footer-column">
+            <h4>Legal</h4>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact Support</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 Book Diary Team. All rights reserved. Crafted with care for reader communities worldwide.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Twitter"><i class="ti ti-brand-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#" aria-label="GitHub"><i class="ti ti-brand-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Page Interactivity Scripts -->
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
