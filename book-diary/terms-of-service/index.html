@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service — Book Diary</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tabler Icons CSS for icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  
+  <style>
+    :root {
+      --font-serif: 'Lora', Georgia, serif;
+      --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      
+      --color-bg: #FAF8F5;
+      --color-card: #FFFFFF;
+      --color-primary: #C8622A;
+      --color-primary-light: #F6EAE2;
+      --color-primary-hover: #AF5120;
+      --color-dark: #2C2318;
+      --color-dark-muted: #5A4A3A;
+      --color-muted: #8A7060;
+      --color-border: rgba(44, 35, 24, 0.08);
+      
+      --shadow: 0 4px 20px rgba(44, 35, 24, 0.03);
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-bg);
+      color: var(--color-dark);
+      line-height: 1.7;
+      padding: 24px 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      background: var(--color-card);
+      padding: 40px 32px;
+      border-radius: 24px;
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow);
+    }
+    
+    @media (max-width: 480px) {
+      body {
+        padding: 12px 8px;
+      }
+      .container {
+        padding: 24px 16px;
+        border-radius: 16px;
+      }
+    }
+    
+    header {
+      margin-bottom: 32px;
+      border-bottom: 1px dashed var(--color-border);
+      padding-bottom: 24px;
+    }
+    
+    .app-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--color-dark);
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background-color: var(--color-primary-light);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary);
+      font-size: 1.1rem;
+    }
+    
+    h1 {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--color-dark);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    
+    .last-updated {
+      font-size: 0.85rem;
+      color: var(--color-muted);
+      font-weight: 500;
+    }
+    
+    h2 {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: var(--color-dark);
+      margin-top: 32px;
+      margin-bottom: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    h2 i {
+      color: var(--color-primary);
+      font-size: 1.2rem;
+    }
+    
+    p {
+      color: var(--color-dark-muted);
+      margin-bottom: 16px;
+      font-size: 0.98rem;
+    }
+    
+    ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+      color: var(--color-dark-muted);
+    }
+    
+    li {
+      margin-bottom: 8px;
+      font-size: 0.98rem;
+    }
+    
+    .terms-card {
+      background: #FDFBF7;
+      border: 1px solid var(--color-border);
+      padding: 16px 20px;
+      border-radius: 12px;
+      margin: 24px 0;
+    }
+    
+    .terms-card p {
+      margin-bottom: 0;
+      color: var(--color-dark-muted);
+      font-size: 0.95rem;
+    }
+    
+    .contact-link {
+      color: var(--color-primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    
+    .contact-link:hover {
+      color: var(--color-primary-hover);
+      text-decoration: underline;
+    }
+    
+    footer {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px dashed var(--color-border);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--color-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="app-logo">
+        <div class="logo-icon">
+          <i class="ti ti-book-2"></i>
+        </div>
+        <span>Book Diary</span>
+      </div>
+      <h1>Terms of Service</h1>
+      <div class="last-updated">Last updated: May 2026</div>
+    </header>
+
+    <main>
+      <p>By downloading, installing, or accessing <strong>Book Diary</strong>, you agree to comply with and be bound by these Terms of Service. If you do not agree to these terms, you should immediately remove the application from your device.</p>
+      
+      <div class="terms-card">
+        <p><i class="ti ti-info-circle" style="font-size: 1.15rem; vertical-align: middle; margin-right: 4px; color: var(--color-primary)"></i> <strong>Aesthetic Reading Space:</strong> Book Diary provides a cozy digital scrapbook to honor your literary habits, track library collections, capture notes, and view statistics.</p>
+      </div>
+
+      <h2><i class="ti ti-license"></i> 1. License & Permitted Use</h2>
+      <p>Book Diary grants you a personal, non-exclusive, non-transferable, revocable license to use the app for personal, non-commercial reading tracking and journal logging purposes in accordance with these Terms.</p>
+
+      <h2><i class="ti ti-cloud-lock"></i> 2. User Data & Device Backup Responsibility</h2>
+      <p>As part of our commitment to user privacy, Book Diary operations are completely localized on your smartphone:</p>
+      <ul>
+        <li><strong>Data Ownership:</strong> You own all text notes, bookshelves, and reading logs you record. We do not store, copy, or monitor your private data.</li>
+        <li><strong>Local Storage Responsibility:</strong> Since your library remains in a local database on your own device, you are solely responsible for securing, maintaining, and backing up your reading logs.</li>
+        <li><strong>Uninstall Data Loss:</strong> Removing or uninstalling the Book Diary app will permanently erase all local library logs, statistics, and scrapbook quotes. We are not liable for any data loss that occurs due to uninstallations or device damage.</li>
+      </ul>
+
+      <h2><i class="ti ti-camera"></i> 3. Cover Media & Personal Content</h2>
+      <p>If you choose to capture physical book covers via camera or upload custom photos from your gallery, you certify that you have the right to use these media files. All cover files are stored locally in the app's secure internal folders and are not transferred to our servers.</p>
+
+      <h2><i class="ti ti-ban"></i> 4. Prohibited Behaviors</h2>
+      <p>You agree not to engage in any actions that compromise the app, including:</p>
+      <ul>
+        <li>Decompiling, reverse engineering, or extracting source code modules from the application package.</li>
+        <li>Bypassing device security blocks or seeking unauthorized access to system APIs.</li>
+        <li>Using Book Diary's visual designs, mobile mockups, terracotta branding icons, or trademarks without prior written permission.</li>
+      </ul>
+
+      <h2><i class="ti ti-help-octagon"></i> 5. Disclaimer of Warranties</h2>
+      <p>Book Diary is provided "as is" and "as available," without warranty of any kind, express or implied. We do not warrant that the application will be completely bug-free, or that your reading streaks or statistics will never experience calculations issues due to local database corruption.</p>
+
+      <h2><i class="ti ti-scale"></i> 6. Modifications to the App & Terms</h2>
+      <p>We reserve the right to modify, pause, or update features of Book Diary at any time to improve performance or update the user experience. We may also update these Terms periodically, and continued use of the application indicates acceptance of any modifications.</p>
+
+      <h2><i class="ti ti-mail"></i> 7. Contact</h2>
+      <p>If you have questions, comments, or legal feedback regarding these Terms, feel free to reach out to us:</p>
+      <p><a href="mailto:dangdung2301@gmail.com" class="contact-link"><i class="ti ti-mail-forward"></i> dangdung2301@gmail.com</a></p>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Book Diary Team. All rights reserved.</p>
+    </footer>
+  </div>
+
+</body>
+</html>
