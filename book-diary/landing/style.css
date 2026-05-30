@@ -1355,6 +1355,580 @@ p {
 }
 
 /* ==========================================================================
+   Scoped Bookshelf / Library View Mockup Styles
+   ========================================================================== */
+.bookshelf-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.bookshelf-view .topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  padding: 0 4px;
+}
+
+.bookshelf-view .topbar-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-dark);
+  font-family: var(--font-sans);
+}
+
+.bookshelf-view .btn-add {
+  width: 36px;
+  height: 36px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition-fast);
+}
+
+.bookshelf-view .btn-add:hover {
+  background-color: var(--color-primary-hover);
+  transform: scale(1.08);
+}
+
+.bookshelf-view .btn-add i {
+  font-size: 18px;
+  color: #fff;
+}
+
+.bookshelf-view .search-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 0 12px;
+  height: 40px;
+  border: 0.5px solid rgba(44, 35, 24, 0.08);
+  margin-bottom: 14px;
+  transition: var(--transition-fast);
+}
+
+.bookshelf-view .search-bar:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 2px 8px rgba(200, 98, 42, 0.08);
+}
+
+.bookshelf-view .search-bar i {
+  font-size: 17px;
+  color: var(--color-muted);
+}
+
+.bookshelf-view .search-bar input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 13px;
+  color: var(--color-dark);
+  flex: 1;
+  font-family: var(--font-sans);
+}
+
+.bookshelf-view .search-bar input::placeholder {
+  color: #b0a090;
+}
+
+.bookshelf-view .tabs-scroll-wrap {
+  margin: 0 -16px 16px;
+  padding: 0 16px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.bookshelf-view .tabs-scroll-wrap::-webkit-scrollbar {
+  display: none;
+}
+
+.bookshelf-view .tabs-row {
+  display: flex;
+  gap: 8px;
+  width: max-content;
+  padding-bottom: 2px;
+}
+
+.bookshelf-view .tab-pill {
+  padding: 7px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-muted);
+  background: #fff;
+  border: 0.5px solid rgba(44, 35, 24, 0.08);
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: var(--transition-fast);
+}
+
+.bookshelf-view .tab-pill:hover {
+  background: var(--color-primary-light);
+  border-color: rgba(200, 98, 42, 0.2);
+}
+
+.bookshelf-view .tab-pill.active {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+  font-weight: 500;
+}
+
+.bookshelf-view .count-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 0 2px;
+}
+
+.bookshelf-view .count-label {
+  font-size: 12px;
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+.bookshelf-view .sort-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.bookshelf-view .sort-btn:hover {
+  color: var(--color-primary);
+}
+
+.bookshelf-view .book-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 6px;
+}
+
+.bookshelf-view .book-item {
+  background: #fff;
+  border-radius: 16px;
+  padding: 12px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  border: 0.5px solid rgba(44, 35, 24, 0.06);
+  transition: var(--transition-smooth);
+}
+
+.bookshelf-view .book-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(44, 35, 24, 0.05);
+}
+
+.bookshelf-view .book-cover {
+  min-width: 52px;
+  width: 52px;
+  height: 74px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 1px 2px 4px rgba(44, 35, 24, 0.06);
+}
+
+.bookshelf-view .cover-spine {
+  width: 3px;
+  height: 70%;
+  position: absolute;
+  left: 7px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.35);
+}
+
+.bookshelf-view .book-cover i {
+  font-size: 18px;
+}
+
+.bookshelf-view .cover-orange { background: #E8C4A0; }
+.bookshelf-view .cover-orange i { color: #7a4520; }
+.bookshelf-view .cover-teal { background: #A8D8C8; }
+.bookshelf-view .cover-teal i { color: #1a5c48; }
+.bookshelf-view .cover-purple { background: #C8C4E8; }
+.bookshelf-view .cover-purple i { color: #3c2878; }
+.bookshelf-view .cover-blue { background: #B8D4F0; }
+.bookshelf-view .cover-blue i { color: #1a3c6c; }
+.bookshelf-view .cover-pink { background: #F0C4D0; }
+.bookshelf-view .cover-pink i { color: #6c1c34; }
+
+.bookshelf-view .book-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.bookshelf-view .book-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-dark);
+  margin-bottom: 2px;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bookshelf-view .book-author {
+  font-size: 12px;
+  color: var(--color-muted);
+  margin-bottom: 8px;
+}
+
+.bookshelf-view .progress-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.bookshelf-view .progress-label {
+  font-size: 11px;
+  color: var(--color-muted);
+}
+
+.bookshelf-view .progress-pct {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.bookshelf-view .progress-bar-bg {
+  height: 4px;
+  background: #ede5da;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.bookshelf-view .progress-bar-fill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: 2px;
+  transition: var(--transition-smooth);
+}
+
+.bookshelf-view .badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.bookshelf-view .badge-want {
+  background: #EEEDFE;
+  color: #3C3489;
+}
+
+.bookshelf-view .badge-done {
+  background: #E1F5EE;
+  color: #0F6E56;
+}
+
+.bookshelf-view .icon-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: #f5f0e8;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.bookshelf-view .icon-btn:hover {
+  background: #ede5da;
+  color: var(--color-dark);
+}
+
+.bookshelf-view .icon-btn i {
+  font-size: 15px;
+  color: var(--color-muted);
+}
+
+/* Beautiful dynamic Toast notifications for smartphone simulation */
+.phone-toast {
+  position: absolute;
+  top: 60px;
+  left: 16px;
+  right: 16px;
+  background-color: var(--color-dark);
+  color: #FFFFFF;
+  border-radius: 12px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 24px rgba(44, 35, 24, 0.2);
+  z-index: 100;
+  font-size: 12px;
+  font-weight: 500;
+  animation: toastIn 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.phone-toast i {
+  color: #FFB380;
+  font-size: 16px;
+}
+
+.phone-toast.fade-out {
+  animation: toastOut 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards;
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes toastOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-20px); }
+}
+
+/* ==========================================================================
+   Scoped Profile View Mockup Styles
+   ========================================================================== */
+
+.profile-view {
+  padding: 0 4px;
+}
+
+.profile-view .section-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 0 4px;
+  margin: 18px 0 8px;
+}
+
+.profile-view .section-label:first-of-type {
+  margin-top: 10px;
+}
+
+.profile-view .ios-card {
+  background: #FFF;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 0.5px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  margin-bottom: 16px;
+}
+
+.profile-view .goal-bar-wrap {
+  padding: 14px 16px;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
+}
+
+.profile-view .goal-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.profile-view .goal-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.profile-view .goal-pct {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.profile-view .goal-bar-bg {
+  height: 6px;
+  background: #EDE5DA;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.profile-view .goal-bar-fill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: 3px;
+  width: 60%;
+}
+
+.profile-view .goal-sub {
+  font-size: 11px;
+  color: var(--color-muted);
+}
+
+.profile-view .stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.profile-view .stat-cell {
+  padding: 12px 14px;
+  border-right: 0.5px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-view .stat-cell:nth-child(2n) {
+  border-right: none;
+}
+
+.profile-view .stat-cell:nth-last-child(-n+2) {
+  border-bottom: none;
+}
+
+.profile-view .stat-icon-wrap {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.profile-view .stat-icon-wrap i {
+  font-size: 16px;
+}
+
+.profile-view .stat-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.profile-view .stat-num {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-dark);
+  line-height: 1.2;
+}
+
+.profile-view .stat-label {
+  font-size: 10px;
+  color: var(--color-muted);
+}
+
+.profile-view .ios-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.profile-view .ios-row:hover {
+  background-color: rgba(0, 0, 0, 0.015);
+}
+
+.profile-view .ios-row:last-child {
+  border-bottom: none;
+}
+
+.profile-view .ios-icon-wrap {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.profile-view .ios-icon-wrap i {
+  font-size: 14px;
+  color: #FFF;
+}
+
+.profile-view .ios-row-label {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.profile-view .ios-row-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.profile-view .ios-badge-text {
+  font-size: 12px;
+  color: var(--color-muted);
+}
+
+.profile-view .chevron {
+  font-size: 12px;
+  color: #C0B0A0;
+}
+
+.profile-view .toggle-bg {
+  width: 44px;
+  height: 26px;
+  border-radius: 13px;
+  background: var(--color-primary);
+  position: relative;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.profile-view .toggle-bg.off {
+  background: #D0C8BE;
+}
+
+.profile-view .toggle-knob {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #FFF;
+  position: absolute;
+  top: 2px;
+  left: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.18);
+  transition: left 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.profile-view .toggle-bg.off .toggle-knob {
+  left: 2px;
+}
+
+/* ==========================================================================
    Responsive Breakpoints
    ========================================================================== */
 
